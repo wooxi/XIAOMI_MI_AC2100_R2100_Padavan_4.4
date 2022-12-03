@@ -154,6 +154,13 @@ jobs:
         run: |
           cd $build_dir/toolchain-mipsel
           sh dl_toolchain.sh
+          
+        
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+
 
       - name: Copy build_firmware_modify to build directory for making the build as lean as possible
         run: |
