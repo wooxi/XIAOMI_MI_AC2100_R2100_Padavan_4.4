@@ -127,7 +127,7 @@ jobs:
       targets: ${{ matrix.targets }}
     strategy:
       matrix:
-        node-version: [18.12.1]
+        node-version: [16]
         include:
           - build_variant: "mt7621"
             targets: "R2100"
@@ -137,6 +137,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - uses: actions/checkout@v2
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: Prepare environment
         run: |
@@ -188,6 +190,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          node-version: ${{ matrix.node-version }}
           tag_name: ${{ env.build_version }}
           release_name: Padavan (${{ env.build_version }})
           body: |
