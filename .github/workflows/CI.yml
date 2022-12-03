@@ -4,10 +4,8 @@ name: Build Padavan
 on:
 #  schedule:
 #    - cron: "0 2 * * *"
-  push:
-    branches:
-      - master
-  workflow_dispatch:
+  watch:
+    types: [started]
   
 env:
   src_git: https://github.com/MeIsReallyBa/padavan-4.4.git
