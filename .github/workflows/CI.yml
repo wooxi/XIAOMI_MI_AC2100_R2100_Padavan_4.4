@@ -11,6 +11,7 @@ env:
   src_git: https://github.com/MeIsReallyBa/padavan-4.4.git
   build_dir: /opt/rt-n56u  
   images_dir: /opt/images
+
   ENABLED_CFG: |
     CONFIG_FIRMWARE_INCLUDE_LANG_CN
     CONFIG_FIRMWARE_CPU_1100MHZ
