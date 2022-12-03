@@ -121,11 +121,13 @@ jobs:
   build:
     name: build
     runs-on: ubuntu-20.04
+
     env:
       build_variant: ${{ matrix.build_variant }}
       targets: ${{ matrix.targets }}
     strategy:
       matrix:
+        node-version: [16] # 配置所需node版本
         include:
           - build_variant: "mt7621"
             targets: "R2100"
