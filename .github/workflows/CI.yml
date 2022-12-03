@@ -138,8 +138,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }} 
       - uses: actions/checkout@v2
-        with:
-          node-version: ${{ matrix.node-version }} 
 
       - name: Prepare environment
         run: |
@@ -215,3 +213,9 @@ jobs:
       #    asset_path: /opt/images/R2100.trx
       #    asset_name: R2100_${{ env.build_date }}_${{ env.build_version }}.trx
       #    asset_content_type: application/bin
+      - name : Upload packages
+        uses: actions/upload-artifact@master
+        if: always()
+        with:
+          name: Padavan-packages
+          path: /opt/images
