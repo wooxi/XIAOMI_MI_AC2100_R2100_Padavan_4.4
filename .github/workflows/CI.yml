@@ -16,6 +16,7 @@ env:
   ENABLED_CFG: |
     CONFIG_FIRMWARE_INCLUDE_LANG_UK
     CONFIG_FIRMWARE_CPU_1100MHZ
+    CONFIG_FIRMWARE_CPU_SLEEP
   DISABLED_CFG: |
     CONFIG_FIRMWARE_INCLUDE_IPSET
     CONFIG_FIRMWARE_CPU_900MHZ
@@ -165,10 +166,7 @@ jobs:
           sh dl_toolchain.sh
           
         
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '16'
+
 
 
       - name: Copy build_firmware_modify to build directory for making the build as lean as possible
