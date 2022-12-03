@@ -213,6 +213,14 @@ jobs:
       #    asset_path: /opt/images/R2100.trx
       #    asset_name: R2100_${{ env.build_date }}_${{ env.build_version }}.trx
       #    asset_content_type: application/bin
+      
+      
+      - name: Delete workflow runs
+        uses: wooxi/delete-workflow-runs@main
+        with:
+          retain_days: 1
+          keep_minimum_runs: 3
+        
       - name : Upload packages
         uses: actions/upload-artifact@master
         if: always()
