@@ -181,19 +181,19 @@ jobs:
           fi; done
 
      #  Create Release was put before "Start Build" to avoid building already existing build      
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ env.build_version }}
-          release_name: Padavan
-          body: |
-            Build Date: ${{ env.build_date }} 
-            Build Version: ${{ env.build_version }} 
-          draft: false
-          prerelease: false
+      #- name: Create Release
+      #  id: create_release
+      #  uses: actions/create-release@v1
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #  with:
+      #    tag_name: ${{ env.build_version }}
+      #    release_name: Padavan
+      #    body: |
+      #      Build Date: ${{ env.build_date }} 
+      #      Build Version: ${{ env.build_version }} 
+      #    draft: false
+      #    prerelease: false
           
       - name: Start build
         run: |
