@@ -8,7 +8,7 @@ on:
     types: [started]
   
 env:
-  src_git: https://github.com/MeIsReallyBa/padavan-4.4.git
+  src_git: https://github.com/wooxi/padavan-4.4.git
   build_dir: /opt/rt-n56u  
   images_dir: /opt/images
 
@@ -18,6 +18,9 @@ env:
     CONFIG_FIRMWARE_CPU_SLEEP
     CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS
     CONFIG_FIRMWARE_INCLUDE_XRAY
+    CONFIG_FIRMWARE_INCLUDE_V2RAY
+    CONFIG_FIRMWARE_INCLUDE_SSOBFS
+    CONFIG_FIRMWARE_INCLUDE_TROJAN
   DISABLED_CFG: |
     CONFIG_FIRMWARE_INCLUDE_IPSET
     CONFIG_FIRMWARE_CPU_900MHZ
